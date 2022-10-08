@@ -7,7 +7,7 @@ export const getCryptoList = () => async (dispatch) => {
     
     const response = await axios.get(baseUrl);
     
-    if (response.data.status == "fail") {
+    if (response.data.status === "fail") {
          dispatch({
              type: FreeListingTypes.FREE_LISTING,
              payload: null
