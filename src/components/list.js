@@ -1,17 +1,16 @@
-import { Button, Col, message, Row, Space, Table, Tag } from "antd";
 import React, { useEffect, useState } from "react";
 import "antd/dist/antd.css";
 import "../index.css";
-import Pageheader from "./pageheader";
-import { useDispatch, useSelector } from "react-redux";
-import { getIdInfo } from "../redux/crypto/crypto-selector";
-import { setIdData } from "../redux/crypto/crypto-actions";
-import axios from "axios";
-import { baseUrl } from "../api/baseUrl";
-import { Link, useNavigate } from "react-router-dom";
-import { EyeOutlined, FundViewOutlined } from "@ant-design/icons";
-import moment from "moment";
 import "../App.css";
+import Pageheader from "./pageheader";
+import { baseUrl } from "../api/baseUrl";
+import moment from "moment";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import { Button, Col, Row, Space, Table } from "antd";
+import { EyeOutlined } from "@ant-design/icons";
+import { useDispatch } from "react-redux";
+import { setIdData } from "../redux/crypto/crypto-actions";
 
 function CryptoList() {
   const columns = [
@@ -118,12 +117,10 @@ function CryptoList() {
       ),
     },
   ];
-  // const dispatch = useDispatch()
-  // const cryptoData = useSelector(getCryptoInfo)
+
   const [datas, setData] = useState([]);
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
-  const getIdData = useSelector(getIdInfo);
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { baseUrl } from "../api/baseUrl";
-import { getIdInfo } from "../redux/crypto/crypto-selector";
 import Pageheader from "./pageheader";
 import "../App.css";
 import {
@@ -18,21 +16,16 @@ import {
   Typography,
 } from "antd";
 import {
-  EditOutlined,
-  EllipsisOutlined,
   HomeOutlined,
   LeftOutlined,
   LineChartOutlined,
   MonitorOutlined,
-  SettingOutlined,
-  UserOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 const { Meta } = Card;
-const { Title, Paragraph, Text, Link } = Typography;
+const { Title, Paragraph } = Typography;
 let str = "";
 const CryptoDetail = () => {
-  const [loader,setLoader] = useState(false)
   const [data, setData] = useState();
   const [img, setDataImg] = useState();
   const [price, setDataPrice] = useState();
